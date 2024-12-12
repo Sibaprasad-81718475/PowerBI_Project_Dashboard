@@ -1,29 +1,79 @@
-Zomato Data manipulation and reporting using Power BI
-Constructing a consolidated and interactive PowerBI report that will allow Zomato to quickly assess the required data.
+Data Manipulation and Reporting with Power BI
 
-Steps performed:
-Data transformation steps:
+DESCRIPTION
 
-Imported data from all the available Excel files (mentioned below) into Power BI. a. Africa b. Asia c. Europe d. NAM e. SAM f. Oceania g. Fact Table h. Country-Code
-Appended the Continent wise data files into a single file (i.e. from 'a' through 'f' from above list).
-Split the column Restaurant Name, Address to have 2 separate columns respectively.
-Replaces all the City names to have correct values.
-Removed unwanted columns like Locality, Locality Verbose, etc.
-For Country-Code data removed null or duplicates.
-Created Measures for – Restaurant Count, Average Rating, Average cost, Cuisine count.
+Zomato is a restaurant aggregation and meal delivery service based in India. It is currently operating in several countries across the world. Zomato provides thorough information about numerous eateries as well as consumer reviews. Zomato's owners aim to find hidden irregularities in their company's data. The ultimate goal of this project is to examine the data in such a way that they can accurately assess their business performance.
 
-Created following visuals for the report:
-World Wide Analysis Page:
+The data (sample) is currently accessible in the form of a few Excel files, each of which contains information about multiple restaurants operating in a certain continent. The clients want to construct a consolidated and interactive Power BI report that will allow them to do the following:
 
-Created Cards for: a. Restaurant Count b. Average Rating c. Average Cost
-Map using the Continent -> Country -> City hierarchy, with bubble size indicating the restaurant count.
-Infographic designer -> custom column chart with martini image as custom columns indicating the average rating for restaurant name.
-Interaction between Map & Infographic designer charts to view data for selected region.
-Restaurant Analysis Page:
+Derive data on the total number of restaurants worldwide, including continents, countries, and cities
 
-Slicers created for a. Rating color – which follows below logic for assigning colors: Aggregate rating Rating color Above 4.5 Dark Green 4 to 4.4 Green 3.5 to 3.9 Yellow 2.5 to 3.4 Orange 1.8 to 2.4 Red 0 to 1.7 White b. Country c. City d. Has Online delivery e. Has Table Booking
-Tree Map – Shows the Restaurant Names & Cuisine Count.
-Gauge – Created 2 gauge as follows: a. Average Cost for 2 b. Average Rating
-Cards – Created 2 cards a. Shows the Restaurant Address for selected Restaurant. b. Shows the available cuisines for the selected Restaurant.
-Interactions are enabled across the page using slicers & between tree map & other visuals.
-Report:
+View data on a global scale with the capacity to drill down to a granular level
+
+Derive data on the restaurants with the highest average customer ratings
+
+Discover the restaurants with the lowest average costs
+
+Filter and view information on the restaurants based on:
+
+I) Their geographical dimensions such as continent, country, and city.
+
+II) The service they provide, such as online ordering or reservation services.
+
+III) The average rating slab by the color.
+
+Identify the restaurants with the most cuisines served
+
+Design a multi-page report that suits Zomato's theme with easy navigation across
+
+sections.
+
+Allow Zomato users to be able to access this information from both a web browser and a mobile device. Aim of the project:
+The aim is to construct a consolidated and interactive PowerBI report that will allow Zomato to quickly assess the required data.
+
+Steps that will help in the completion of the project:
+
+Import the data from all available Excel files
+
+Data transformation:
+
+Make sure the City column names are corrected
+
+For example:
+
+“Sí£o Paulo” should be corrected to “São Paulo” Ensure the city name isn't ambiguous
+
+For example:
+
+“Cedar Rapids/Iowa City” should be corrected to “Cedar Rapids”
+
+“ÛÁstanbul” should be corrected to “Istanbul”
+
+Remove any columns that aren't being used
+
+Create two columns to display the Restaurant Name and Restaurant Address
+
+Make a separate table for the list of the cuisines that each restaurant serves
+
+As it's a dimension table, the Country-Code table must only include unique and non-blank values
+
+Steps to use DAX in the project
+
+Add a Rating color column in an appropriate table with the data rows in the format given belo
+Aggregate rating
+Rating color Above 4.5
+Dark Green 4 to 4.4
+Green
+
+Create the following measures in the appropriate tables
+a. Restaurant count
+
+b. Average cost
+
+c. Average rating
+
+d. Cuisine count
+
+Create a new column in the Country Code table and name it “Continent” and create the values using the below-mentioned convention
+Note: The mapping is continent - country, for example ''Africa – South Africa''
+
